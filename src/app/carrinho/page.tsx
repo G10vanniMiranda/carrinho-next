@@ -9,12 +9,18 @@ import Right from "../../../public/arrowRight.png";
 import Mouse from "../../../public/mouse.webp";
 import Headset from "../../../public/headset.png"
 import Headset2 from "../../../public/headset2.png"
+import Teclado from "../../../public/teclado.png"
 
 export default function Carrinho() {
   const [item1, setItem1] = useState(1);
   const [item2, setItem2] = useState(1);
+  const [item3, setItem3] = useState(1);
+  const [item4, setItem4] = useState(1);
   const [produtoPreco1, setProdutoPreco1] = useState(199);
   const [produtoPreco2, setProdutoPreco2] = useState(277);
+  const [produtoPreco3, setProdutoPreco3] = useState(169);
+  const [produtoPreco4, setProdutoPreco4] = useState(349);
+
   function increment1(event: any) {
     event.preventDefault();
 
@@ -29,6 +35,20 @@ export default function Carrinho() {
     setProdutoPreco2(produtoPreco2 + 277);
   }
 
+  function increment3(event: any) {
+    event.preventDefault();
+
+    setItem3(item3 + 1);
+    setProdutoPreco3(produtoPreco3 + 169);
+  }
+
+  function increment4(event: any) {
+    event.preventDefault();
+
+    setItem4(item4 + 1);
+    setProdutoPreco4(produtoPreco4 + 349);
+  }
+
   function decrement1(event: any) {
     event.preventDefault();
 
@@ -39,6 +59,7 @@ export default function Carrinho() {
     }
 
   }
+
   function decrement2(event: any) {
     event.preventDefault();
 
@@ -46,6 +67,28 @@ export default function Carrinho() {
       setItem2(item2 - 1);
 
       setProdutoPreco2(produtoPreco2 - 277);
+    }
+
+  }
+
+  function decrement3(event: any) {
+    event.preventDefault();
+
+    if (item3 > 1) {
+      setItem3(item3 - 1);
+
+      setProdutoPreco3(produtoPreco3 - 169);
+    }
+
+  }
+
+  function decrement4(event: any) {
+    event.preventDefault();
+
+    if (item4 > 1) {
+      setItem4(item4 - 1);
+
+      setProdutoPreco4(produtoPreco4 - 349);
     }
 
   }
@@ -62,7 +105,8 @@ export default function Carrinho() {
         </div>
 
         {/* right box dos itens */}
-        <div className="box-right pt-5  w-full md:w-[400px]">
+        <div className="box-right pt-5 w-full md:w-[400px]">
+
           {/* Item 1 */}
           <div className="item">
             <div className="flex items-center gap-5">
@@ -105,7 +149,7 @@ export default function Carrinho() {
               </div>
 
               <div className="productInfo flex flex-col">
-                <h2>Logitech MX Master 3s</h2>
+                <h2>Logitech Headset</h2>
 
                 <div className="flex gap-3">
                   <span className="font-semibold">R$ {produtoPreco2} </span>
@@ -130,6 +174,75 @@ export default function Carrinho() {
               <Image src={Trash} alt="Lixeira" className="w-4" />
             </button>
           </div>
+
+          {/* Item 3 */}
+          <div className="item">
+            <div className="flex items-center gap-5">
+              <div className="imgContent bg-[#1D1D1D] h-22 flex items-center justify-center rounded-lg">
+                <Image src={Headset} alt="a" className="w-20 hover:scale-125 duration-300" />
+              </div>
+
+              <div className="productInfo flex flex-col">
+                <h2>Headset Gamer</h2>
+
+                <div className="flex gap-3">
+                  <span className="font-semibold">R$ {produtoPreco3} </span>
+                  <span className="text-zinc-500 line-through">R$ 719,90</span>
+                </div>
+
+                <div className="qtd gap-2 flex items-center mt-2.5">
+                  <button onClick={decrement3} className="cursor-pointer border-3 px-2 py-1.5 border-[#1D1D1D] rounded-sm">
+                    <Image src={Left} alt="menos" className="w-2 hover:scale-125" />
+                  </button>
+
+                  <span> {item3} </span>
+
+                  <button onClick={increment3} className="cursor-pointer border-3 px-2 py-1.5 border-[#1D1D1D] rounded-sm">
+                    <Image src={Right} alt="mais" className="w-2" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button className="cursor-pointer border-3 h-10 px-3 py-1 border-[#1D1D1D] rounded-sm ml-10">
+              <Image src={Trash} alt="Lixeira" className="w-4" />
+            </button>
+          </div>
+
+          {/* Item 4 */}
+          <div className="item">
+            <div className="flex items-center gap-5">
+              <div className="imgContent bg-[#1D1D1D] h-22 flex items-center justify-center rounded-lg">
+                <Image src={Teclado} alt="a" className="w-20 hover:scale-125 duration-300" />
+              </div>
+
+              <div className="productInfo flex flex-col">
+                <h2>Teclado Gamer Redragon</h2>
+
+                <div className="flex gap-3">
+                  <span className="font-semibold">R$ {produtoPreco4} </span>
+                  <span className="text-zinc-500 line-through">R$ 719,90</span>
+                </div>
+
+                <div className="qtd gap-2 flex items-center mt-2.5">
+                  <button onClick={decrement4} className="cursor-pointer border-3 px-2 py-1.5 border-[#1D1D1D] rounded-sm">
+                    <Image src={Left} alt="menos" className="w-2 hover:scale-125" />
+                  </button>
+
+                  <span> {item4} </span>
+
+                  <button onClick={increment4} className="cursor-pointer border-3 px-2 py-1.5 border-[#1D1D1D] rounded-sm">
+                    <Image src={Right} alt="mais" className="w-2" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button className="cursor-pointer border-3 h-10 px-3 py-1 border-[#1D1D1D] rounded-sm ml-10">
+              <Image src={Trash} alt="Lixeira" className="w-4" />
+            </button>
+          </div>
+
         </div>
       </div>
 

@@ -25,7 +25,7 @@ export default function Navbar() {
     setBtnToogleClose("hidden")
   }
   return (
-    <header className="md:bg-[#1D1D1D]  h-15 flex items-center px-2">
+    <header className="md:bg-[#1D1D1D] h-15 flex items-center justify-center px-2">
 
       <ul className="gap-5 hidden md:flex">
         <li className="px-2 py-0.5 rounded-sm hover:bg-[#171b52] transition-colors duration-300">
@@ -37,7 +37,7 @@ export default function Navbar() {
       </ul>
 
       <div className={`bg-slate-200 w-[83%] h-screen z-10 ${isOpen}`}>
-        <h1 className="text-black">Menu</h1>
+
       </div>
 
       <IoClose onClick={toggleMenuClose} className={`md:hidden absolute right-5 w-10 h-10 p-2 border text-red-600 z-20 ${btnToogleClose}`} />
