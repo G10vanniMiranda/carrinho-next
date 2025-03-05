@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.container-carrinho{
+    @apply w-screen h-screen flex flex-col items-center justify-center
+}
+
+.item{
+    @apply w-[400px] md:w-[500px] flex items-center h-22 gap-2 px-4 mb-4 cursor-pointer duration-300
+}
+
