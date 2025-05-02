@@ -3,13 +3,13 @@
 import React, { useState } from "react";
 import "./carrinho.css";
 import Image from "next/image";
-import Left from "../../../public/arrowLeft.png";
-import Trash from "../../../public/trash-can.png";
-import Right from "../../../public/arrowRight.png";
-import Mouse from "../../../public/mouse.webp";
-import Headset from "../../../public/headset.png"
-import Headset2 from "../../../public/headset2.png"
-import Teclado from "../../../public/teclado.png"
+import Left from "../../../../public/arrowLeft.png";
+import Trash from "../../../../public/trash-can.png";
+import Right from "../../../../public/arrowRight.png";
+import Mouse from "../../../../public/mouse.webp";
+import Headset from "../../../../public/headset.png"
+import Headset2 from "../../../../public/headset2.png"
+import Teclado from "../../../../public/teclado.png"
 
 export default function Carrinho() {
   const [item1, setItem1] = useState(1);
